@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weatherflut/ui/home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'WeatherFlut',
       theme: ThemeData.light(),
-      home: null,
+      home: HomePage(),
     );
   }
 }
