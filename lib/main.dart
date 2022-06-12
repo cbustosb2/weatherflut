@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'WeatherFlut',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
