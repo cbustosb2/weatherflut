@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherflut/ui/cities/cities_page.dart';
+import 'package:weatherflut/ui/ui_constant.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class HomePage extends StatelessWidget {
             child: Center(
               child: Container(
                 constraints: const BoxConstraints(
-                  maxWidth: 250.0,
+                  maxWidth: maxPageWidth,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
