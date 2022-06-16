@@ -1,8 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:weatherflut/ui/common/debouncer.dart';
 import 'package:weatherflut/ui/common/header_widget.dart';
 
-class AddCitiesPage extends StatelessWidget {
+class AddCitiesPage extends StatefulWidget {
   const AddCitiesPage({Key? key}) : super(key: key);
+
+  @override
+  State<AddCitiesPage> createState() => _AddCitiesPageState();
+}
+
+class _AddCitiesPageState extends State<AddCitiesPage> {
+  final debouncer = Debouncer();
+
+  void onChangedText(String text) {
+    debouncer.run(
+      () {
+        print('text: $text');
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +42,7 @@ class AddCitiesPage extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(15.0),
               child: TextField(
+                onChanged: onChangedText,
                 decoration: InputDecoration(
                   focusedBorder: InputBorder.none,
                   border: InputBorder.none,
@@ -37,6 +54,7 @@ class AddCitiesPage extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ),
+                autofocus: true,
               ),
             ),
           ],
